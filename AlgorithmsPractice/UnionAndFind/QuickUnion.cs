@@ -13,6 +13,8 @@
 
         public override bool Connected(int p, int q)
         {
+            var result = false;
+
             // Linear, O(N) due to tree height
             if (p >= 0 && q >= 0)
             {
@@ -20,15 +22,10 @@
                 var pRoot = _ids[GetCorrectedIndex(p)];
                 
                 // If they're already equal return true
-                if (pRoot == qRoot)
-                {
-                    return true;
-                }
-
                 // If not then we go find the rootest of the rootz
-                return FindRootNode(pRoot) == FindRootNode(qRoot);
+                result = pRoot == qRoot ? true : FindRootNode(pRoot) == FindRootNode(qRoot);
             }
-            return false;
+            return result;
         }
 
         public override void Union(int p, int q)

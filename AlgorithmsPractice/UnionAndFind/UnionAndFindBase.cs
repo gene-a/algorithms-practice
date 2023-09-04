@@ -14,7 +14,10 @@
         }
 
         public abstract void Union(int p, int q);
+        
+        // i.e. Find
         public abstract bool Connected(int p, int q);
+
         protected int GetCorrectedIndex(int i)
         {
             return i == 0 ? 0 : i - 1;

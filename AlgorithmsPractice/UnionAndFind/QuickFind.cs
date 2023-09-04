@@ -20,7 +20,7 @@
         public override void Union(int p, int q)
         {
             // Quadratic, O(n^2)
-            // Depending on array size operation will have to access the array again and again untill all IDs have been updated as necessary
+            // Depending on the array size operation will have to access the array again and again untill all IDs have been updated as necessary
             if (p >= 0 && q >= 0)
             {
                 var valueP = _ids[GetCorrectedIndex(p)];
