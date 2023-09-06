@@ -22,5 +22,10 @@
         {
             return i == 0 ? 0 : i - 1;
         }
+
+        protected int FindRootNode(int i)
+        {
+            return _ids[i] == i ? i : FindRootNode(_ids[i]);
+        }
     }
 }

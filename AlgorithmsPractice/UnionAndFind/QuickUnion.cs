@@ -6,16 +6,11 @@
         {
         }
 
-        protected int FindRootNode(int i)
-        {
-            return _ids[i] == i ? i : FindRootNode(_ids[i]);
-        }
-
         public override bool Connected(int p, int q)
         {
             var result = false;
 
-            // Linear, O(N) due to tree height
+            // O(N) due to tree height
             if (p >= 0 && q >= 0)
             {
                 var qRoot = _ids[GetCorrectedIndex(q)];
